@@ -10,7 +10,7 @@ cam = cv2.VideoCapture(0)
 
 face_cascade = cv2.CascadeClassifier('haarcascade_frontalface_default.xml') 
 eye_cascade = cv2.CascadeClassifier('haarcascade_eye.xml')
-smile_cascade = cv2.CascadeClassifier('haar-cascade-files-master\\haarcascade_smile.xml')
+smile_cascade = cv2.CascadeClassifier('haarcascade_smile.xml')
 
 font = cv2.FONT_HERSHEY_SIMPLEX
 nmbr=0

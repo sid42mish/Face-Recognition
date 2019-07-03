@@ -24,7 +24,7 @@ line_width = 3
 while True:
     ret_val, img = cam.read()
     #rgb_image = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
-    tracker = cv2.TrackerBoosting_create()
+    #tracker = cv2.TrackerBoosting_create()
     dets = detector(img)
     for det in dets:
         
