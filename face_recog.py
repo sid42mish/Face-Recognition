@@ -4,12 +4,15 @@ import dlib
 import numpy as np
 import os
 
+
  ####################################################################################
-##	A.face_recog : Attendance using Face Recognition Project
+##	B.face_recog : Attendance using Face Recognition Project
 ##		1. Detecting face
 ##		2. Classifying faces by comparing unknown face with known faces						
 ##		3. Marking attendance for checked classes
  ####################################################################################
+
+
 
 cam = cv2.VideoCapture(0)       # setting up camera
 
@@ -28,7 +31,8 @@ for i in names:
         img_encoding = face_recognition.face_encodings(img)[0]
         encodings.append(img_encoding)  # appending encoded images in list 'encodings'
     classes.append(encodings)           # appending encodings in 2-D list 'classes'
-    
+   
+
 attendance =  {key: 0 for key in names} # initialising attendance list
 print(attendance)
 detector = dlib.get_frontal_face_detector() # detecting frontal face
@@ -56,8 +60,9 @@ while True:
         
             for i in range (nmbr_of_img):
                 # Draw rectangle around Face with color:Green and line width: 3pt
-                cv2.rectangle(img,(det.left(), det.top()), (det.right(), det.bottom()), color_green, line_width)
+                
                 for j in range (len(names)):
+                    cv2.rectangle(img,(det.left(), det.top()), (det.right(), det.bottom()), color_green, line_width)
                     # comparing unknown faces with known classes
                     results1 = face_recognition.compare_faces([classes[j][i]], unknown_face_encoding, tolerance = 0.45)
                     if results1[0] == True:         # checking matches
